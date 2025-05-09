@@ -1,0 +1,6 @@
+# run_script2.yml
+- name: Run api_fact_check_running
+  hosts: localhost
+  tasks:
+    - name: Run api_fact_check_running
+      ansible.builtin.command: python3 ./scripts/api_fact_check_running.py
