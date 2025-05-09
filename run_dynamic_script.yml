@@ -1,0 +1,8 @@
+# run_dynamic_script.yml
+- name: Run selected Python script
+  hosts: localhost
+  vars:
+    script_name: "{{ script_name }}"
+  tasks:
+    - name: Run dynamic script
+      ansible.builtin.command: "python3 ./scripts/{{ script_name }}"
