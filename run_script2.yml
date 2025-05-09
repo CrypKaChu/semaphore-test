@@ -2,5 +2,13 @@
 - name: Run chris_time_aware_bias_detection
   hosts: localhost
   tasks:
+  
+    - name: Install required Python packages
+      ansible.builtin.pip:
+        name:
+          - vaderSentiment
+          - nltk
+        executable: pip3
+  
     - name: Run chris_time_aware_bias_detection
       ansible.builtin.command: python3 ./scripts/chris_time_aware_bias_detection.py
