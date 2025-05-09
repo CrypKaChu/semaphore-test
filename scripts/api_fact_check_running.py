@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1kkMIxSxAegPobGf7ytKZ9q2v3QuC6xk7
 """
 
-!pip install flask pyngrok flask-sqlalchemy requests flask-cors nltk --quiet
+# !pip install flask pyngrok flask-sqlalchemy requests flask-cors nltk --quiet
 from flask import Flask, request, jsonify, render_template_string
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
