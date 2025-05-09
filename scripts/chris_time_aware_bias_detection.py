@@ -8,7 +8,7 @@ Original file is located at
 """
 
 # ✅ STEP 0: Install requirements (if not already installed)
-!pip install vaderSentiment --quiet
+#!pip install vaderSentiment --quiet
 import nltk
 nltk.download('stopwords')
 
