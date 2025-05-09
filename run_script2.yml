@@ -1,0 +1,6 @@
+# run_script2.yml
+- name: Run chris_time_aware_bias_detection
+  hosts: localhost
+  tasks:
+    - name: Run chris_time_aware_bias_detection
+      ansible.builtin.command: python3 ./scripts/chris_time_aware_bias_detection.py
