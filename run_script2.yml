@@ -8,6 +8,9 @@
         name:
           - vaderSentiment
           - nltk
+          - pandas
+          - matplotlib
+          - seaborn
         executable: pip3
   
     - name: Run chris_time_aware_bias_detection
