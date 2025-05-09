@@ -2,5 +2,18 @@
 - name: Run api_fact_check_running
   hosts: localhost
   tasks:
+    - name: Install required Python packages
+      ansible.builtin.pip:
+        name:
+          - flask
+          - pyngrok
+          - flask-sqlalchemy
+          - requests
+          - flask-cors
+          - nltk
+        executable: pip3
+  
     - name: Run api_fact_check_running
       ansible.builtin.command: python3 ./scripts/api_fact_check_running.py
+
+
