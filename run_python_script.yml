@@ -6,3 +6,8 @@
     - name: Run Python script
       ansible.builtin.command:
         cmd: python3 ./scripts/run_script.py
+      register: result
+
+    - name: Print script output
+      debug:
+        var: result.stdout
