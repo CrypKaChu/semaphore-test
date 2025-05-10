@@ -32,6 +32,7 @@
           - matplotlib
           - seaborn
         executable: pip3
+      ignore_errors: yes
   
     - name: Run chris_time_aware_bias_detection
       ansible.builtin.command: python3 ./scripts/chris_time_aware_bias_detection.py
