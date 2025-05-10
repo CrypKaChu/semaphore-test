@@ -3,8 +3,8 @@
   hosts: localhost
   tasks:
 
-    - name: Install system build tools
-      ansible.builtin.apt:
+    - name: Install packages on Alpine
+      community.general.apk:
         name:
           - build-essential
           - python3-dev
