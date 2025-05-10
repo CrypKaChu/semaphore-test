@@ -6,6 +6,10 @@
     - name: Install required Python packages
       ansible.builtin.pip:
         name:
+          - build-essential
+          - python3-dev
+          - gcc
+          - g++
           - vaderSentiment
           - nltk
           - pandas
