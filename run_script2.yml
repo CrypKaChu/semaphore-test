@@ -7,6 +7,11 @@
       ansible.builtin.raw: cat /etc/os-release
       register: os_info
 
+    - name: Print OS information
+      debug:
+      var: os_info.stdout_lines
+
+
 
     - name: Install packages on Alpine
       community.general.apk:
