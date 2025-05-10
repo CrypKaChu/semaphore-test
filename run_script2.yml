@@ -2,14 +2,23 @@
 - name: Run chris_time_aware_bias_detection
   hosts: localhost
   tasks:
+
+    - name: Install system build tools
+    become: yes
+    ansible.builtin.apt:
+      name:
+        - build-essential
+        - python3-dev
+        - gcc
+        - g++
+        - libffi-dev
+        - libssl-dev
+      state: present
+      update_cache: yes
   
     - name: Install required Python packages
       ansible.builtin.pip:
         name:
-          - build-essential
-          - python3-dev
-          - gcc
-          - g++
           - vaderSentiment
           - nltk
           - pandas
