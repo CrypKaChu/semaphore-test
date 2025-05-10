@@ -15,9 +15,9 @@
 
     - name: Install packages on Alpine
       ansible.builtin.raw: |
-      if grep -qi alpine /etc/os-release; then
-          apk update && apk add --no-cache build-base gcc g++ python3-dev musl-dev libffi-dev
-      fi
+        if grep -qi alpine /etc/os-release; then
+            apk update && apk add --no-cache build-base gcc g++ python3-dev musl-dev libffi-dev
+        fi
       args:
         executable: /bin/sh  # ensure shell compatibility
       ignore_errors: yes
