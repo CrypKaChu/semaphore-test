@@ -13,7 +13,6 @@
           - libffi-dev
           - libssl-dev
         state: present
-        update_cache: yes
   
     - name: Install required Python packages
       ansible.builtin.pip:
