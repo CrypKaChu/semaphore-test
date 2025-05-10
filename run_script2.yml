@@ -4,7 +4,7 @@
   tasks:
 
     - name: Install build tools on Debian/Ubuntu
-      ansible.builtin.raw: |
+      ansible.builtin.apt: |
         apt update && apt install -y build-essential python3-dev
 
     - name: Check Linux distribution
