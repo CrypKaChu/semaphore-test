@@ -3,6 +3,11 @@
   hosts: localhost
   tasks:
 
+    - name: Check Linux distribution
+      ansible.builtin.raw: cat /etc/os-release
+      register: os_info
+
+
     - name: Install packages on Alpine
       community.general.apk:
         name:
