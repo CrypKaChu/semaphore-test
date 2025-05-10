@@ -3,6 +3,10 @@
   hosts: localhost
   tasks:
 
+    - name: Install build tools on Debian/Ubuntu
+      ansible.builtin.raw: |
+        apt update && apt install -y build-essential python3-dev
+
     - name: Check Linux distribution
       ansible.builtin.raw: cat /etc/os-release
       register: os_info
@@ -11,16 +15,16 @@
       debug:
         var: os_info.stdout_lines
 
-    - name: Install packages on Alpine
-      community.general.apk:
-        name:
-          - build-essential
-          - python3-dev
-          - gcc
-          - g++
-          - libffi-dev
-          - libssl-dev
-        state: present
+    # - name: Install packages on Alpine
+    #   community.general.apk:
+    #     name:
+    #       - build-essential
+    #       - python3-dev
+    #       - gcc
+    #       - g++
+    #       - libffi-dev
+    #       - libssl-dev
+    #     state: present
   
     - name: Install required Python packages
       ansible.builtin.pip:
