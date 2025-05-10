@@ -1,6 +1,7 @@
 # run_script2.yml
 - name: Run chris_time_aware_bias_detection
   hosts: localhost
+  become: false 
   tasks:
 
 
@@ -13,8 +14,14 @@
         var: os_info.stdout_lines
 
     - name: Install packages on Alpine
-      ansible.builtin.raw: apk update && apk add build-base gcc g++ python3-dev
-      become: true
+      ansible.builtin.raw: |
+      if grep -qi alpine /etc/os-release; then
+          apk update && apk add --no-cache build-base gcc g++ python3-dev musl-dev libffi-dev
+      fi
+      args:
+        executable: /bin/sh  # ensure shell compatibility
+      ignore_errors: yes
+      
   
     - name: Install required Python packages
       ansible.builtin.pip:
