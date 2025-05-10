@@ -291,12 +291,12 @@ def get_alerts():
 
 # Start ngrok tunnel
 try:
-    public_url = ngrok.connect(5000).public_url
+    public_url = ngrok.connect(5001).public_url
     print(f"\n🔥 ACCESS YOUR FACT CHECK API HERE: {public_url}\n")
 except Exception as e:
     print(f"Could not start ngrok: {str(e)}")
-    public_url = "http://127.0.0.1:5000"
+    public_url = "http://127.0.0.1:5001"
 
 # Start server
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
