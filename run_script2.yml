@@ -9,9 +9,7 @@
 
     - name: Print OS information
       debug:
-      var: os_info.stdout_lines
-
-
+        var: os_info.stdout_lines
 
     - name: Install packages on Alpine
       community.general.apk:
